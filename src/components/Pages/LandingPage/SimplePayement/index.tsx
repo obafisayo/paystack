@@ -79,11 +79,10 @@ const SimplePayment = () => {
                 href="/success-rates"
                 className="flex items-center gap-3 text-paystack-green font-bold group transition-all"
               >
-                <div className="w-5 h-5 rounded-full border-2 border-paystack-green flex items-center justify-center transition-all group-hover:bg-paystack-green">
+                <div className="w-5 h-5 rounded-full border-[1.5px] border-paystack-green flex items-center justify-center transition-all group-hover:bg-paystack-green">
                   <svg width="6" height="10" viewBox="0 0 6 10" fill="none" className="text-[#00C853] group-hover:text-white transition-colors">
-                    <path d="M1 9L5 5L1 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M1 9L5 5L1 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-
                 </div>
                 <span className="text-[15px]">Find out how we achieve high success rates</span>
               </Link>
