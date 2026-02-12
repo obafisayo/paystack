@@ -508,3 +508,19 @@ body {
   animation: dropdownIn 0.3s ease-out forwards;
   will-change: transform, opacity;
 }
+
+/* Navbar Dropdown Panel Transitions */
+.dropdown-panel-transition {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transform: translateY(4px);
+}
+
+.dropdown-panel-transition.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateY(0);
+}
