@@ -15,7 +15,7 @@ const ProtectYourSelf = () => {
                             loop
                             playsInline
                         >
-                            <source src="/assets/img/Advanced-Fraud-Protection.mp4" type="video/mp4" />
+                            <source src="/assets/mov/Advanced-Fraud-Protection.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     </div>
