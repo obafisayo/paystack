@@ -19,15 +19,15 @@ const Hamburger: React.FC<HamburgerProps> = ({
       aria-expanded={isOpen}
     >
       <span
-        className={`block h-0.5 w-6 bg-primary rounded-full transition-all duration-300 ease-in-out absolute ${isOpen ? "rotate-45" : "-translate-y-2"
+        className={`block h-0.5 w-5 bg-primary rounded-full transition-all duration-300 ease-in-out absolute ${isOpen ? "rotate-45" : "-translate-y-2"
           }`}
       />
       <span
-        className={`block h-0.5 w-6 bg-primary rounded-full transition-all duration-300 ease-in-out absolute ${isOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
+        className={`block h-0.5 w-5 bg-primary rounded-full transition-all duration-300 ease-in-out absolute ${isOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
           }`}
       />
       <span
-        className={`block h-0.5 w-6 bg-primary rounded-full transition-all duration-300 ease-in-out absolute ${isOpen ? "-rotate-45" : "translate-y-2"
+        className={`block h-0.5 w-5 bg-primary rounded-full transition-all duration-300 ease-in-out absolute ${isOpen ? "-rotate-45" : "translate-y-2"
           }`}
       />
     </button>
