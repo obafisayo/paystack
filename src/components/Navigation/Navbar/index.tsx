@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Paystack from "@/assets/SVGs/Paystack";
-import { FaCaretDown, FaChevronRight } from "react-icons/fa";
 import Hamburger from "../Hamburger";
 import Header from "../Header";
 import NavLink from "./NavLink";
@@ -23,6 +22,8 @@ import Guides from "@/assets/icons/navigation/learn/guides_db";
 import Tutorials from "@/assets/icons/navigation/learn/tutorials_db";
 
 import ThemedButton from "@/components/Common/ThemedButton";
+import LeftCaret from "@/assets/icons/hero/LeftCaret";
+import { BiCaretRight } from "react-icons/bi";
 
 type PanelType = "main" | "why-paystack" | "learn" | "developers" | "support" | null;
 
@@ -166,11 +167,11 @@ const Navbar = () => {
         { label: "Why was I debited?", href: "/debited" },
     ];
 
-    const FastLink = ({ closeMenu, href, label }: { closeMenu: () => void, href: string, label: string }) => {
+    const FastLink = ({ closeMenu, href, label, className }: { closeMenu: () => void, href: string, label: string, className?: string }) => {
         return (
             <Link
                 href={href}
-                className="block py-4 text-[#0A2540] text-[17px] font-medium"
+                className={`block py-2 text-gray-900 text-[15px] leading-[20px] font-medium ${className}`}
                 onClick={closeMenu}
             >
                 {label}
@@ -181,17 +182,17 @@ const Navbar = () => {
         return (
             <button
                 onClick={onClick}
-                className="w-full flex items-center justify-between py-4 text-[#0A2540] text-[17px] font-medium"
+                className="w-full flex items-center justify-between py-2 text-gray-900 text-[15px] leading-[20px] font-medium"
             >
                 {label}
-                <FaChevronRight className="w-4 h-4 text-gray-400" />
+                <BiCaretRight className="w-4 h-4 text-gray-400" />
             </button>
         )
     }
     return (
         <div>
             <div
-                className={`w-full bg-[#EBF8F2]/95 backdrop-blur-sm fixed z-50 transition-all duration-300 ease-in-out ${headerVisible ? "top-0" : "-top-[46px]"
+                className={`w-full bg-[#EBF8F2]/95 fixed z-50 transition-all duration-300 ease-in-out ${headerVisible ? "top-0" : "-top-[46px]"
                     }`}
             >
                 <Header />
@@ -227,7 +228,7 @@ const Navbar = () => {
                     <Hamburger
                         isOpen={mobileMenuOpen}
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="md:hidden"
+                        className="xl:hidden"
                     />
                 </nav>
             </div>
@@ -235,7 +236,7 @@ const Navbar = () => {
             {/* Mobile Menu Overlay */}
             <div
                 className={`xl:hidden fixed z-[60] transition-all duration-300 ease-in-out ${mobileMenuOpen
-                    ? "opacity-100 pointer-events-auto"
+                    ? "opacity-95 pointer-events-auto"
                     : "opacity-0 pointer-events-none"
                     }`}
                 style={{
@@ -252,15 +253,14 @@ const Navbar = () => {
                         }`}
                 >
                     <div className="overflow-y-auto h-full px-6 py-6">
-                        <div className="space-y-1">
-                            {/* Why Paystack */}
+                        <div className="space-y-0">
                             <FastButton onClick={() => openPanel("why-paystack")} label="Why Paystack" />
                             <FastLink closeMenu={closeMenu} href="/customers" label="Customers" />
                             <FastLink closeMenu={closeMenu} href="/pricing" label="Pricing" />
                             <FastButton onClick={() => openPanel("learn")} label="Learn" />
                             <FastButton onClick={() => openPanel("developers")} label="Developers" />
                             <FastButton onClick={() => openPanel("support")} label="Support" />
-                            <FastLink closeMenu={closeMenu} href="/login" label="Login" />
+                            <FastLink closeMenu={closeMenu} href="/login" label="Login" className="text-paystack-green" />
                             <div className="pt-4">
                                 <Link href="/signup" onClick={closeMenu}>
                                     <ThemedButton variant="primary" size="md" fullWidth>
@@ -280,11 +280,9 @@ const Navbar = () => {
                     <div className="overflow-y-auto h-full px-6 py-6">
                         <button
                             onClick={() => setActivePanel("main")}
-                            className="flex items-center gap-2 text-gray-500 hover:text-gray-700 transition-colors mb-4"
+                            className="flex items-center justify-center gap-2 text-gray-500 hover:text-gray-700 transition-colors mb-4"
                         >
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                            </svg>
+                            <LeftCaret className="w-2 h-2" />
                             <span className="text-[15px]">Back</span>
                         </button>
                         <div className="space-y-1">
@@ -292,8 +290,8 @@ const Navbar = () => {
                             <FastLink closeMenu={closeMenu} href="/success-rates" label="Success Rates" />
                             <FastLink closeMenu={closeMenu} href="/demo" label="Demo" />
                             {/* Growth Stage */}
-                            <div className="pt-6">
-                                <p className="text-xs font-semibold text-gray-500 tracking-wider mb-2 px-0">
+                            <div className="pt-4">
+                                <p className="text-[10px] font-medium text-[#3D5369] tracking-wider mb-2 px-0">
                                     YOUR GROWTH STAGE
                                 </p>
                                 <FastLink closeMenu={closeMenu} href="/entrepreneurs" label="For Entrepreneurs" />
@@ -303,8 +301,8 @@ const Navbar = () => {
                             </div>
 
                             {/* Business Type */}
-                            <div className="pt-6">
-                                <p className="text-xs font-semibold text-gray-500 tracking-wider mb-2 px-0">
+                            <div className="pt-4">
+                                <p className="text-[10px] font-medium text-[#3D5369] tracking-wider mb-2 px-0">
                                     YOUR BUSINESS TYPE
                                 </p>
                                 <FastLink closeMenu={closeMenu} href="/fintechs" label="For Fintechs" />
