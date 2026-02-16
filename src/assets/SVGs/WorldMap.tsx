@@ -82,7 +82,7 @@ const WorldMap = (props: SVGProps<SVGSVGElement>) => {
             fill="#9FFFB3"
           ></path>
         </g>
-        <g className="map-pointer" id="nigeria">
+        <g className="map-pointer group" id="nigeria">
           <rect
             width="38"
             height="38"
@@ -90,6 +90,23 @@ const WorldMap = (props: SVGProps<SVGSVGElement>) => {
             fillOpacity="0"
             transform="translate(658 334)"
           ></rect>
+          <foreignObject
+            x="690"
+            y="325"
+            width="250"
+            height="120"
+            className="pointer-events-none"
+          >
+            <div className="flex flex-col gap-1 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-x-2">
+              <p className="text-[11px] leading-snug text-gray-900 font-medium font-sans">
+                Get paid from{" "}
+                <span className="font-bold text-paystack-green">Lagos, Nigeria</span>
+              </p>
+              <p className="text-[12px] leading-1.4 text-gray-500 font-normal font-sans">
+                Sell locally with four different payment methods
+              </p>
+            </div>
+          </foreignObject>
           <g id="Ellipse 2_3" filter="url(#filter2_d)">
             <circle cx="677" cy="353" r="19" fill="#011B33"></circle>
             <circle cx="677" cy="353" r="18"></circle>
@@ -113,7 +130,7 @@ const WorldMap = (props: SVGProps<SVGSVGElement>) => {
             ></path>
           </g>
         </g>
-        <g className="map-pointer" id="egypt">
+        <g className="map-pointer group" id="egypt">
           <rect
             width="38"
             height="38"
@@ -121,6 +138,23 @@ const WorldMap = (props: SVGProps<SVGSVGElement>) => {
             fillOpacity="0"
             transform="translate(773 260)"
           ></rect>
+          <foreignObject
+            x="530"
+            y="250"
+            width="250"
+            height="100"
+            className="pointer-events-none"
+          >
+            <div className="flex flex-col gap-1 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-x-2 text-right">
+              <p className="text-[11px] leading-snug text-gray-900 font-medium font-sans">
+                Get paid from{" "}
+                <span className="font-bold text-paystack-green">Cairo, Egypt</span>
+              </p>
+              <p className="text-[12px] leading-1.4 text-gray-500 font-normal font-sans">
+                Accept payments in any currency you want
+              </p>
+            </div>
+          </foreignObject>
           <g id="Ellipse 2_4" filter="url(#filter3_d)">
             <circle cx="792" cy="279" r="19" fill="white"></circle>
             <circle
@@ -137,7 +171,7 @@ const WorldMap = (props: SVGProps<SVGSVGElement>) => {
             fill="#9FFFB3"
           ></path>
         </g>
-        <g className="map-pointer" id="brazil">
+        <g className="map-pointer group" id="brazil">
           <rect
             width="38"
             height="38"
@@ -145,6 +179,23 @@ const WorldMap = (props: SVGProps<SVGSVGElement>) => {
             fillOpacity="0"
             transform="translate(375 432)"
           ></rect>
+          <foreignObject
+            x="410"
+            y="420"
+            width="250"
+            height="100"
+            className="pointer-events-none"
+          >
+            <div className="flex flex-col gap-1 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-x-2">
+              <p className="text-[11px] leading-snug text-gray-900 font-medium font-sans">
+                Get paid from{" "}
+                <span className="font-bold text-paystack-green">Rio, Brazil</span>
+              </p>
+              <p className="text-[12px] leading-1.4 text-gray-500 font-normal font-sans">
+                Sell to customers all over the world
+              </p>
+            </div>
+          </foreignObject>
           <g id="Ellipse 2_5" filter="url(#filter4_d)">
             <circle cx="394" cy="451" r="19" fill="white"></circle>
             <circle
@@ -161,7 +212,7 @@ const WorldMap = (props: SVGProps<SVGSVGElement>) => {
             fill="#9FFFB3"
           ></path>
         </g>
-        <g className="map-pointer" id="south-africa">
+        <g className="map-pointer group" id="south-africa">
           <rect
             width="38"
             height="38"
@@ -169,6 +220,23 @@ const WorldMap = (props: SVGProps<SVGSVGElement>) => {
             fillOpacity="0"
             transform="translate(744 531)"
           ></rect>
+          <foreignObject
+            x="530"
+            y="525"
+            width="250"
+            height="120"
+            className="pointer-events-none"
+          >
+            <div className="flex flex-col gap-1 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-x-2 text-start">
+              <p className="text-[11px] leading-snug text-gray-900 font-medium font-sans">
+                Get paid from{" "}
+                <span className="font-bold text-paystack-green">Johannesburg</span>
+              </p>
+              <p className="text-[12px] leading-1.4 text-gray-500 font-normal font-sans">
+                Paystack grows with your business
+              </p>
+            </div>
+          </foreignObject>
           <g id="Ellipse 2_6" filter="url(#filter5_d)">
             <circle cx="763" cy="550" r="19" fill="white"></circle>
             <circle
@@ -257,7 +325,7 @@ const WorldMap = (props: SVGProps<SVGSVGElement>) => {
             fill="#9FFFB3"
           ></path>
         </g>
-        <g className="map-pointer map-pointer--left" id="norway">
+        <g className="map-pointer map-pointer--left group" id="norway">
           <rect
             width="38"
             height="38"
@@ -265,6 +333,23 @@ const WorldMap = (props: SVGProps<SVGSVGElement>) => {
             fillOpacity="0"
             transform="translate(754 41)"
           ></rect>
+          <foreignObject
+            x="500"
+            y="30"
+            width="250"
+            height="110"
+            className="pointer-events-none"
+          >
+            <div className="flex flex-col gap-1 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-x-2 text-right">
+              <p className="text-[11px] leading-snug text-gray-900 font-medium font-sans">
+                Get paid from{" "}
+                <span className="font-bold text-paystack-green">Oslo, Norway</span>
+              </p>
+              <p className="text-[12px] leading-1.4 text-gray-500 font-normal font-sans">
+                Use Paystack Go to follow your business wherever you go
+              </p>
+            </div>
+          </foreignObject>
           <g id="Ellipse 2_10" filter="url(#filter9_d)">
             <circle cx="773" cy="60" r="19" fill="white"></circle>
             <circle

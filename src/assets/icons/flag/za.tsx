@@ -5,6 +5,7 @@ const ZaFlagIcon = (props: SVGProps<SVGSVGElement>) => {
     <svg
       width="640"
       height="480"
+      viewBox="0 0 640 480"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}

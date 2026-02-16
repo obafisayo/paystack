@@ -20,12 +20,12 @@ const CountrySelector: React.FC = () => {
     const countries: Country[] = [
         { name: 'Ghana', flag: GhFlag, code: 'GH' },
         { name: "Côte d'Ivoire", flag: CiFlag, code: 'CI' },
-        // { name: 'Nigeria', flag: NgFlagIcon, code: 'NG' },
+        { name: 'Nigeria', flag: NgFlagIcon, code: 'NG' },
         { name: 'Egypt', flag: EgFlag, code: 'EG' },
         { name: 'Kenya', flag: KeFlag, code: 'KE' },
-        // { name: 'Rwanda', flag: RwFlag, code: 'RW' },
-        // { name: 'South Africa', flag: ZaFlag, code: 'ZA' },
-        // { name: 'Paystack', flag: PaystackIcon, code: 'PS' },
+        { name: 'Rwanda', flag: RwFlag, code: 'RW' },
+        { name: 'South Africa', flag: ZaFlag, code: 'ZA' },
+        { name: 'Others', flag: PaystackIcon, code: 'PS' },
     ];  
 
     const [selectedCountry, setSelectedCountry] = useState(countries[ 2]);
@@ -40,7 +40,7 @@ const CountrySelector: React.FC = () => {
                 className="flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors"
                 aria-label="Select country"
             >
-                <selectedCountry.flag className="w-4 h-4 object-contain rounded-md" />
+                <selectedCountry.flag className="w-4 h-4 rounded-md" />
             </button>
 
             {/* Dropdown Panel */}
@@ -55,7 +55,7 @@ const CountrySelector: React.FC = () => {
                             }}
                             className="w-full flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors text-left"
                         >
-                            <country.flag className="w-4 h-4 object-contain rounded-md" />
+                            <country.flag className="w-4 h-4 rounded-md" />
                             <span className="font-medium">{country.name}</span>
                         </button>
                     ))}

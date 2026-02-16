@@ -79,6 +79,8 @@
   --font-boing:
     "Boing", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  --z-index-60: 60;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -288,6 +290,28 @@ body {
 .c-homepage-animation--americas
   .c-homepage-animation__worldmap
   svg
+  .map-pointer#uk,
+.c-homepage-animation--americas
+  .c-homepage-animation__worldmap
+  svg
+  .map-pointer#china,
+.c-homepage-animation--americas
+  .c-homepage-animation__worldmap
+  svg
+  .map-pointer#india,
+.c-homepage-animation--americas
+  .c-homepage-animation__worldmap
+  svg
+  .map-pointer#norway {
+  opacity: 0;
+  transform: scale(0.5);
+  pointer-events: none;
+  transition-delay: 0s;
+}
+
+.c-homepage-animation--americas
+  .c-homepage-animation__worldmap
+  svg
   .map-pointer#united-states {
   transition-delay: 2s;
 }
@@ -320,11 +344,45 @@ body {
 .c-homepage-animation--africa
   .c-homepage-animation__worldmap
   svg
-  .map-pointer#egypt {
+  .map-pointer#egypt,
+.c-homepage-animation--africa
+  .c-homepage-animation__worldmap
+  svg
+  .map-pointer#brazil,
+.c-homepage-animation--africa
+  .c-homepage-animation__worldmap
+  svg
+  .map-pointer#norway {
   opacity: 1;
   transform: scale(1) rotate(0);
   cursor: e-resize;
   pointer-events: all;
+}
+
+.c-homepage-animation--africa
+  .c-homepage-animation__worldmap
+  svg
+  .map-pointer#united-states,
+.c-homepage-animation--africa
+  .c-homepage-animation__worldmap
+  svg
+  .map-pointer#canada,
+.c-homepage-animation--africa
+  .c-homepage-animation__worldmap
+  svg
+  .map-pointer#uk,
+.c-homepage-animation--africa
+  .c-homepage-animation__worldmap
+  svg
+  .map-pointer#china,
+.c-homepage-animation--africa
+  .c-homepage-animation__worldmap
+  svg
+  .map-pointer#india {
+  opacity: 0;
+  transform: scale(0.5);
+  pointer-events: none;
+  transition-delay: 0s;
 }
 
 .c-homepage-animation--africa
@@ -523,4 +581,8 @@ body {
   visibility: visible;
   pointer-events: all;
   transform: translateY(0);
+}
+.map-pointer.group:hover .c-homepage-animation__tooltip {
+  opacity: 1;
+  transform: translateY(-30px) rotate(0deg);
 }

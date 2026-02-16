@@ -52,7 +52,7 @@ const Footer = () => {
   );
 
   return (
-    <footer className="w-full bg-white">
+    <footer className="w-full bg-white" data-nav-color="#FFFFFF">
       <div className="max-w-[1280px] mx-auto px-11 py-16 pb-40">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-x-8 gap-y-12 mb-16">
           <Navigation title={navigationSections[0].title} links={navigationSections[0].links} />

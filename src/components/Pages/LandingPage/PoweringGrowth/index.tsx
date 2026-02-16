@@ -47,7 +47,7 @@ const PoweringGrowth = () => {
   return (
     <section className="w-full bg-white py-[80px] md:pb-[180px] md:pt-[140px]">
       <div className="max-w-[1280px] mx-auto px-7">
-        <div className="mb-16 w-[670px]">
+        <div className="mb-16 max-w-[670px]">
           <h2 className="text-[45px] font-bold text-gray-900 mb-6 leading-[54px]">
             Powering growth for amazing businesses
           </h2>

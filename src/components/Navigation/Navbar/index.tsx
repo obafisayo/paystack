@@ -32,15 +32,51 @@ const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [activePanel, setActivePanel] = useState<PanelType>("main");
     const [headerVisible, setHeaderVisible] = useState(true);
+    const [navBackground, setNavBackground] = useState("#EBF8F2");
 
     useEffect(() => {
+        let lastScrollY = window.scrollY;
+
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-            setHeaderVisible(currentScrollY <= 1);
+
+            if (currentScrollY > lastScrollY && currentScrollY > 0) {
+                setHeaderVisible(false);
+            } else if (currentScrollY < lastScrollY) {
+                setHeaderVisible(true);
+            }
+
+            lastScrollY = currentScrollY;
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    useEffect(() => {
+        const observerOptions = {
+            root: null,
+            rootMargin: "-1px 0px -99% 0px",
+            threshold: 0,
+        };
+
+        const observerCallback: IntersectionObserverCallback = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const color = entry.target.getAttribute("data-nav-color");
+                    if (color) {
+                        setNavBackground(color);
+                    }
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        const sections = document.querySelectorAll("[data-nav-color]");
+
+        sections.forEach((section) => observer.observe(section));
+
+        return () => observer.disconnect();
     }, []);
 
     useEffect(() => {
@@ -192,11 +228,11 @@ const Navbar = () => {
     return (
         <div>
             <div
-                className={`w-full bg-[#EBF8F2]/95 fixed z-50 transition-all duration-300 ease-in-out ${headerVisible ? "top-0" : "-top-[46px]"
-                    }`}
+                className={`w-full fixed z-50 transition-all duration-300 ease-in-out ${headerVisible ? "top-0" : "-top-[46px]"}`}
+                style={{ backgroundColor: navBackground, opacity: 0.9 }}
             >
                 <Header />
-                <nav className="max-w-7xl mx-auto pt-4 px-6 xl:px-12 pb-3 flex items-center justify-between">
+                <nav className="max-w-7xl mx-auto py-3 px-6 xl:px-12 flex items-center justify-between">
                     {/* Left Section: Logo + Main Nav */}
                     <div className="flex items-center gap-6">
                         <Link href="/" className="flex items-center">
@@ -235,7 +271,7 @@ const Navbar = () => {
 
             {/* Mobile Menu Overlay */}
             <div
-                className={`xl:hidden fixed z-[60] transition-all duration-300 ease-in-out ${mobileMenuOpen
+                className={`xl:hidden fixed z-60 transition-all duration-300 ease-in-out ${mobileMenuOpen
                     ? "opacity-95 pointer-events-auto"
                     : "opacity-0 pointer-events-none"
                     }`}
