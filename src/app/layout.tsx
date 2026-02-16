@@ -16,7 +16,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Paystack - Modern online and offline payments for Africa",
-  description: "Paystack is a payment gateway that helps businesses accept payments online.",
+  description:
+    "Paystack is a payment gateway that helps businesses accept payments online.",
+  icons: {
+    icon: [
+      { url: "/favicon/favicon.ico" },
+      { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/favicon/apple-touch-icon.png" },
+    ],
+  },
 };
 
 export default function RootLayout({
